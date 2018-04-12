@@ -30,9 +30,13 @@ Copyright 2018
     background: linear-gradient(white, aqua);
 }
 
-#center {
+/* #center {
     text-align: center;
 }
+
+tr, td {
+    align-content: left; 
+} */
 
 footer {
     font-family: Futura, Calibri;

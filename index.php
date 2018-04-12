@@ -1,4 +1,4 @@
-
+<!-- Greg Uctum, Kehsley Lewis, Tim Sterk -->
 <?PHP
 
 $l = mysqli_connect("34.224.83.184", "student14", "phppass14", "student14");
@@ -23,6 +23,10 @@ $access_token = $token->access_token;
 
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Szymon's Army Polls</title>
+    <link rel="stylesheet" href="css/371styles.css">
+  </head>
 <body>
 
 <div id="poll">

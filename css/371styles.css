@@ -1,0 +1,38 @@
+/*
+CIS 371 Szymon's Army
+Greg Uctum, Tim Sterk, Kehlsey Lewis
+Copyright 2018
+*/
+
+#poll {
+    clear: both;
+    text-align: center;
+    background-color: aqua;
+    padding: 3%;
+    border: 2px black solid;
+    border-radius: 25px;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    background: linear-gradient(white, aqua);
+}
+
+footer {
+    font-family: Futura, Calibri;
+    text-align: center;
+}
+
+body {
+    background: linear-gradient(white, #96ff00);
+    background-attachment: fixed;
+}
+
+/* @media only screen and (min-width:660px) {
+    
+    
+}
+
+@media only screen and (min-width:830px) {
+
+    
+} */

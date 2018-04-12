@@ -29,6 +29,30 @@ $access_token = $token->access_token; */
   </head>
 <body>
 
+<script>
+function loadNo() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     document.getElementById("message").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "load_no.txt", true);
+  xhttp.send();
+}
+
+function loadYes() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     document.getElementById("message").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "load_yes.txt", true);
+  xhttp.send();
+}
+</script>
+
 <div id="poll">
 <h3>Do you like PHP and AJAX so far?</h3>
 <form>
@@ -37,13 +61,13 @@ Yes:
 
 $query = 'update survey set yes = yes + 1';
 
-?>">
+?>"; "loadYes()">
 <br>No:
 <input type="radio" name="vote" value="1" onclick="<?PHP
 
 $query = 'update survey set no = no + 1';
 
-?>">
+?>"; "loadNo()">
 <form action="pull_vote.php" method="POST">
 <br />
 <?PHP
@@ -52,6 +76,7 @@ $query = 'update survey set no = no + 1';
   $b = mysqli_query($l,$a);
   ?>
 <button type="submit" onclick="location.href='https://lkehlsey.ddns.net:9014/coursegames/pull_vote.php';">Continue</button>
+<p id="message"></p>
 </form>
 </form>
 </div>

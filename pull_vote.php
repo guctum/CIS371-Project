@@ -23,7 +23,7 @@ $no = $row['no'];
 <body>
 
 <h2>Result:</h2>
-<table>
+<table class="results">
 <tr>
 <td>Yes:</td>
 <td>
@@ -43,3 +43,6 @@ height='20'>
 </td>
 </tr>
 </table>
+
+</body>
+</html>

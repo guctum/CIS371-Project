@@ -17,6 +17,10 @@ Copyright 2018
     background: linear-gradient(white, aqua);
 }
 
+.results {
+    background-color: aqua;
+}
+
 footer {
     font-family: Futura, Calibri;
     text-align: center;

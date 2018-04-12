@@ -18,7 +18,20 @@ Copyright 2018
 }
 
 .results {
+    clear: both;
+    text-align: center;
     background-color: aqua;
+    padding: 3%;
+    border: 2px black solid;
+    border-radius: 25px;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    background: linear-gradient(white, aqua);
+}
+
+#center {
+    text-align: center;
 }
 
 footer {

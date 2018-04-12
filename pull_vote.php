@@ -21,9 +21,9 @@ $no = $row['no'];
     <link rel="stylesheet" href="css/371styles.css">
   </head>
 <body>
-
+<div class="results">
 <h2>Result:</h2>
-<table class="results">
+<table id="center">
 <tr>
 <td>Yes:</td>
 <td>
@@ -43,6 +43,8 @@ height='20'>
 </td>
 </tr>
 </table>
+
+</div>
 
 </body>
 </html>

@@ -26,10 +26,7 @@ $access_token = $token->access_token; */
   <head>
     <title>Szymon's Army Polls</title>
     <link rel="stylesheet" href="css/371styles.css">
-  </head>
-<body>
-
-<script>
+	<script>
 function loadNo() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -52,6 +49,10 @@ function loadYes() {
   xhttp.send();
 }
 </script>
+  </head>
+<body>
+
+
 
 <div id="poll">
 <h3>Do you like PHP and AJAX so far?</h3>
@@ -61,13 +62,13 @@ Yes:
 
 $query = 'update survey set yes = yes + 1';
 
-?>"; "loadYes()">
+?>; loadYes()">
 <br>No:
 <input type="radio" name="vote" value="1" onclick="<?PHP
 
 $query = 'update survey set no = no + 1';
 
-?>"; "loadNo()">
+?>; loadNo()">
 <form action="pull_vote.php" method="POST">
 <br />
 <?PHP
@@ -75,7 +76,7 @@ $query = 'update survey set no = no + 1';
   $a = "select * from users";
   $b = mysqli_query($l,$a);
   ?>
-<button type="submit" onclick="location.href='https://lkehlsey.ddns.net:9014/coursegames/pull_vote.php';">Continue</button>
+<a href="https://lkehlsey.ddns.net:9014/coursegames/pull_vote.php" class="button">Continue</a>
 <p id="message"></p>
 </form>
 </form>

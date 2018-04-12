@@ -1,3 +1,4 @@
+<!-- Greg Uctum, Kehlsey Lewis, Tim Sterk -->
 <?php
 
 $l = mysqli_connect("34.224.83.184", "student14", "phppass14", "student14");

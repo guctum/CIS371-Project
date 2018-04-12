@@ -51,7 +51,7 @@ $query = 'update survey set no = no + 1';
   $a = "select * from users";
   $b = mysqli_query($l,$a);
   ?>
-<button type="submit">Continue</button>
+<button type="submit" onclick="location.href='https://lkehlsey.ddns.net:9014/coursegames/pull_vote.php';">Continue</button>
 </form>
 </form>
 </div>

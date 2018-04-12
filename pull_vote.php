@@ -14,6 +14,14 @@ $no = $row['no'];
 
 ?>
 
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Szymon's Army Polls</title>
+    <link rel="stylesheet" href="css/371styles.css">
+  </head>
+<body>
+
 <h2>Result:</h2>
 <table>
 <tr>

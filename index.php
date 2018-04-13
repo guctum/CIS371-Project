@@ -37,6 +37,14 @@ function loadNo() {
   };
   xhttp.open("GET", "load_no.txt", true);
   xhttp.send();
+
+<?PHP
+
+$table = 'update survey set no = no + 1';
+
+?>;
+
+
 }
 
 function loadYes() {
@@ -48,6 +56,13 @@ function loadYes() {
   };
   xhttp.open("GET", "load_yes.txt", true);
   xhttp.send();
+<?PHP
+
+$table = 'update survey set yes = yes + 1';
+
+?>
+
+
 }
 </script>
   </head>
@@ -59,21 +74,13 @@ function loadYes() {
 <h3>Do you like PHP and AJAX so far?</h3>
 <form>
 Yes:
-<input type="radio" name="vote" value="0" onclick="<?PHP
-
-$query = 'update survey set yes = yes + 1';
-
-?>; loadYes()">
+<input type="radio" name="vote" value="0" onclick="loadYes()">
 <br>No:
-<input type="radio" name="vote" value="1" onclick="<?PHP
-
-$query = 'update survey set no = no + 1';
-
-?>; loadNo()">
+<input type="radio" name="vote" value="1" onclick="loadNo()">
 <form action="pull_vote.php" method="POST">
 <br />
 <?PHP
-  mysqli_query($l,$query);
+  mysqli_query($l,$table);
   $a = "select * from users";
   $b = mysqli_query($l,$a);
   ?>

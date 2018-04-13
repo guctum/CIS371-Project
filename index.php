@@ -5,20 +5,6 @@ $l = mysqli_connect("34.224.83.184", "student14", "phppass14", "student14");
 $query = "select * from survey";
 mysqli_query($l,$query);
 
-$course_id=$_GET['course_id'];
-$clientURL="http://bb.dataii.com:8080";
-
-
-require_once('classes/Rest.class.php');
-require_once('classes/Token.class.php');
-
-
-$rest = new Rest($clientURL);
-$token = new Token();
-
-$token = $rest->authorize();
-$access_token = $token->access_token;
-
 ?>
 
 
@@ -35,15 +21,8 @@ function loadNo() {
      document.getElementById("message").innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "load_no.txt", true);
+  xhttp.open("GET", "load_no.php", true);
   xhttp.send();
-
-<?PHP
-
-$table = 'update survey set no = no + 1';
-
-?>;
-
 
 }
 
@@ -54,14 +33,8 @@ function loadYes() {
      document.getElementById("message").innerHTML = this.responseText;
     }
   };
-  xhttp.open("GET", "load_yes.txt", true);
+  xhttp.open("GET", "load_yes.php", true);
   xhttp.send();
-<?PHP
-
-$table = 'update survey set yes = yes + 1';
-
-?>
-
 
 }
 </script>
@@ -80,7 +53,7 @@ Yes:
 <form action="pull_vote.php" method="POST">
 <br />
 <?PHP
-  mysqli_query($l,$table);
+  mysqli_query($l,$query);
   $a = "select * from users";
   $b = mysqli_query($l,$a);
   ?>
@@ -92,3 +65,48 @@ Yes:
 
 </body>
 </html>
+
+<?PHP
+
+$course_id=$_GET['course_id'];
+$clientURL="http://bb.dataii.com:8080";
+
+
+require_once('classes/Rest.class.php');
+require_once('classes/Token.class.php');
+
+
+$rest = new Rest($clientURL);
+$token = new Token();
+
+$token = $rest->authorize();
+$access_token = $token->access_token;
+
+$columns = $rest->readGradebookColumns($access_token, $course_id);
+$c=$columns->results;
+
+
+foreach($c as $row)
+{
+        if ($row->name == "Total")
+        {
+         $finalGradeName=$row->name;
+         $finalGradeID=$row->id;
+         $finalPossible=$row->score->possible;
+         break;
+        }
+}
+
+$grades = $rest->readGradebookGrades($access_token, $course_id, $finalGradeID);
+
+$g=$grades->results;
+
+foreach($g as $row)
+{
+        $user = $rest->readUser($access_token, $row->userId);
+	echo "<br />";
+	echo "$user->userName";
+
+}
+
+?>

@@ -24,7 +24,7 @@ $no = $row['no'];
 <body>
 <div class="results">
 <h2>Result:</h2>
-<table id="center">
+<table>
 <tr>
 <td>Yes:</td>
 <td>

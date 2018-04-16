@@ -6,4 +6,6 @@ mysqli_query($l,$query);
 
 $query = 'update survey set no = no + 1';
 
+echo "Are you sure you don't like PHP? Not like you will lose points based on your answer but....";
+
 ?>

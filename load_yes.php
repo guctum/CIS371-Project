@@ -6,4 +6,6 @@ mysqli_query($l,$query);
 
 $query = 'update survey set yes = yes + 1';
 
+echo "Hurray you picked the RIGHT answer!";
+
 ?>

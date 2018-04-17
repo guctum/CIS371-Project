@@ -71,9 +71,13 @@ Yes:
 $course_id=$_GET['course_id'];
 $clientURL="http://bb.dataii.com:8080";
 
-
+//Pull in the Rest classes
 require_once('classes/Rest.class.php');
 require_once('classes/Token.class.php');
+
+//Pull in the load files
+require_once('load_no.php');
+require_once('load_yes.php');
 
 
 $rest = new Rest($clientURL);

@@ -92,8 +92,8 @@ require_once('classes/Rest.class.php');
 require_once('classes/Token.class.php');
 
 //Pull in the load files
-require_once('load_no.php');
-require_once('load_yes.php');
+/* require_once('load_no.php');
+require_once('load_yes.php'); */
 
 
 $rest = new Rest($clientURL);

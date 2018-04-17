@@ -42,7 +42,7 @@ function update(){
 	 mysqli_query($l,$query);
   
   
-  if (voteYes.select==true){
+  if (vote.value==0){
 	  $query = 'update survey set yes = yes + 1';
   }
   else{
@@ -63,9 +63,9 @@ function update(){
 <h3>Do you like PHP and AJAX so far?</h3>
 <form>
 Yes:
-<input type="radio" name="voteYes" value="0" onclick="loadYes()">
+<input type="radio" name="vote" value="0" onclick="loadYes()">
 <br>No:
-<input type="radio" name="voteNo" value="1" onclick="loadNo()">
+<input type="radio" name="vote" value="1" onclick="loadNo()">
 <form action="pull_vote.php" method="POST">
 <br />
 <?PHP

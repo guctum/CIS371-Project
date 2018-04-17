@@ -8,7 +8,7 @@ mysqli_query($l,$query);
 ?>
 
 
-<!DOCTYPE html>
+<!DOCTYPE html lang="en">
 <html>
   <head>
     <title>Szymon's Army Polls</title>
@@ -63,9 +63,9 @@ function update(){
 <h3>Do you like PHP and AJAX so far?</h3>
 <form>
 Yes:
-<input type="radio" name="vote" value="0" onclick="loadYes()">
+<input type="radio" id="yes" name="vote" value="0" onclick="loadYes()">
 <br>No:
-<input type="radio" name="vote" value="1" onclick="loadNo()">
+<input type="radio" id="no" name="vote" value="1" onclick="loadNo()">
 <form action="pull_vote.php" method="POST">
 <br />
 <?PHP

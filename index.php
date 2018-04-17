@@ -40,8 +40,7 @@ function loadYes() {
 function update(){
 	<?PHP 
 	 mysqli_query($l,$query);
-  $a = "select * from users";
-  $b = mysqli_query($l,$a);
+  
   
   if (voteYes.select==true){
 	  $query = 'update survey set yes = yes + 1';
@@ -49,6 +48,8 @@ function update(){
   else{
 	  $query = 'update survey set no = no + 1';
   }
+  mysqli_query($l,$query);
+
 	?>
 }
 

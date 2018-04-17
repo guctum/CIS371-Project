@@ -37,6 +37,21 @@ function loadYes() {
   xhttp.send();
 
 }
+function update(){
+	<?PHP 
+	 mysqli_query($l,$query);
+  $a = "select * from users";
+  $b = mysqli_query($l,$a);
+  
+  if (voteYes.select==true){
+	  $query = 'update survey set yes = yes + 1';
+  }
+  else{
+	  $query = 'update survey set no = no + 1';
+  }
+	?>
+}
+
 </script>
   </head>
 <body>
@@ -47,17 +62,17 @@ function loadYes() {
 <h3>Do you like PHP and AJAX so far?</h3>
 <form>
 Yes:
-<input type="radio" name="vote" value="0" onclick="loadYes()">
+<input type="radio" name="voteYes" value="0" onclick="loadYes()">
 <br>No:
-<input type="radio" name="vote" value="1" onclick="loadNo()">
+<input type="radio" name="voteNo" value="1" onclick="loadNo()">
 <form action="pull_vote.php" method="POST">
 <br />
 <?PHP
-  mysqli_query($l,$query);
+  /* mysqli_query($l,$query);
   $a = "select * from users";
-  $b = mysqli_query($l,$a);
-  ?>
-<a href="https://lkehlsey.ddns.net:9014/coursegames/pull_vote.php" class="button">Continue</a>
+  $b = mysqli_query($l,$a); */
+  ?> 
+<a href="https://lkehlsey.ddns.net:9014/coursegames/pull_vote.php" class="button" onclick="update()">Continue</a>
 <p id="message"></p>
 </form>
 </form>
